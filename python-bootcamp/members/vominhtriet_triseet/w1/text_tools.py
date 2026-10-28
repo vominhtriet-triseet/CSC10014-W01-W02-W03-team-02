@@ -1,4 +1,5 @@
 def word_count(text: str) -> dict[str, int]:
+    """Count case-insensitive words after removing the specified punctuation."""
     for p in ".,!?;:":
         text = text.replace(p, " ")
     
@@ -9,6 +10,7 @@ def word_count(text: str) -> dict[str, int]:
     return counts
 
 def top_k(text: str, k: int) -> list[tuple[str, int]]:
+    """Return up to k words ordered by descending count and then alphabetically."""
     if k <= 0:
         return []
 

@@ -4,6 +4,7 @@ from .io_utils import load_tasks
 
 
 def main() -> None:
+    """Load the sample tasks and print their details."""
     samples = Path(__file__).resolve().parents[3] / "samples"
     tasks = load_tasks(samples / "tasks.csv")
     if not tasks:
