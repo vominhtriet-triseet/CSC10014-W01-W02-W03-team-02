@@ -10,6 +10,7 @@ _REQUIRED_COLUMNS = ("title", "importance", "effort_h", "deadline")
 
 
 def load_tasks(path: str | Path) -> list[Task]:
+    """Load tasks from CSV, reporting malformed data with its line number."""
     tasks = []
     with Path(path).open(newline="", encoding="utf-8") as file:
         reader = csv.DictReader(file)
@@ -42,6 +43,7 @@ def load_tasks(path: str | Path) -> list[Task]:
 
 
 def save_json(tasks: Iterable[Task], path: str | Path) -> None:
+    """Write tasks as readable JSON with ISO-formatted deadlines."""
     data = [
         {
             "title": task.title,
