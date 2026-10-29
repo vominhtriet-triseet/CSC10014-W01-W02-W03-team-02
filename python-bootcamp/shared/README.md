@@ -1,3 +1,8 @@
-# Shared Team Code
+# Shared study planner
 
-This folder contains team exercises and shared code.
+The shared planner uses the `Task` and `Block` dataclasses in `shared/contract.py`.
+
+## Pipeline
+
+```text
+CSV → parse_csv → prioritise → allocate → render
